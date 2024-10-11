@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node src/index.js",
+    "dev": "tsx src/index.ts",    
+    "lint": "eslint",
+    "lint-fix": "eslint --fix",
+    "format-check": "prettier . --check",
+    "format": "prettier . --write",
+    "test": "tsx --test"
   },
   "keywords": [],
   "author": "",
