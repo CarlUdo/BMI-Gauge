@@ -10,7 +10,8 @@
     "lint-fix": "eslint --fix",
     "format-check": "prettier . --check",
     "format": "prettier . --write",
-    "test": "tsx --test"
+    "test": "tsx --test",
+    "test-only": "tsx --test-only"
   },
   "keywords": [],
   "author": "",
