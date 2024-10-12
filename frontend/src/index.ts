@@ -37,8 +37,12 @@ const isValidIntegers = (heightInput: string, weightInput: string) => {
   return isValidHeight && isValidWeight;
 };
 
+
+
 /** Post and render functions */
 const renderData = (bmiResponse: BmiResponse) => {
+  outputArea.removeAttribute('hidden');
+
   outputArea.innerHTML = JSON.stringify(bmiResponse);
 };
 
@@ -75,6 +79,7 @@ const initListeners = () => {
     weightField.value = "";
     outputArea.value = "";
     submitButton.setAttribute("disabled", "true");
+    outputArea.setAttribute("hidden", "true");
   });
 
   heightField.addEventListener("change", () => {
