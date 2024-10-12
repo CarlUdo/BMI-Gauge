@@ -3,7 +3,7 @@ export type BmiRequest = {
   weight: string;
 };
 
-export type BmiAdvice = {
+export type Advice = {
   underweight: string;
   healthyRange: string;
   overweight: string;
