@@ -1,16 +1,31 @@
 import http from 'http';
+import type { BmiRequest } from './types';
 
 const PORT = 3000;
 const HOST = '0.0.0.0';
 
 const server = http.createServer((req, res) => {
-  console.log(`Getting a ${req.method} request`);
-
   res.writeHead(200, {
-    "Content-type": "appllication/json"
+    "Content-Type": "application/json",
+    'Access-Control-Allow-Origin': 'http://localhost:8080',
+    'Access-Control-Allow-Headers': 'Content-Type, Accept'
   });
 
-  res.end(JSON.stringify({ message: "Hello from server!"}));
+  if (req.method !== 'POST') {
+    return res.end(JSON.stringify({ error: `Invalid method: ${req.method}`}));
+  }
+
+  let body = '';
+
+  req.on('data', chunk => {
+    body += chunk;
+  });
+
+  req.on('end', () => {
+    const bmiRequest = JSON.parse(body) as BmiRequest;
+
+    res.end(JSON.stringify({ message: `Hello ${bmiRequest.height}`}));
+  });  
 });
 
 server.listen(PORT, HOST, () => {
