@@ -37,15 +37,14 @@ const isValidIntegers = (heightInput: string, weightInput: string) => {
   return isValidHeight && isValidWeight;
 };
 
-
 /** Post and render functions */
 const renderData = (bmiResponse: BmiResponse) => {
-  outputArea.removeAttribute('hidden');
+  outputArea.removeAttribute("hidden");
 
-  const p1Element = document.createElement('p');
+  const p1Element = document.createElement("p");
   p1Element.innerHTML = `<strong>Your BMI is: </strong>${bmiResponse.bmi}`;
 
-  const p2Element = document.createElement('p');
+  const p2Element = document.createElement("p");
   p2Element.textContent = bmiResponse.advice;
 
   outputArea.appendChild(p1Element);
