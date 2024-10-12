@@ -1,13 +1,13 @@
 import { calculateBmi } from "./calculate-bmi";
-import { getBmiAdvice } from "./get-bmi-advice";
+import { getAdvice } from "./get-advice";
 import type { BmiRequest } from "./types";
 
 export const getBmiResponse = (bmiRequest: BmiRequest) => {
   const bmi = calculateBmi(bmiRequest);
-  const bmiAdvice = getBmiAdvice(bmi);
+  const advice = getAdvice(bmi);
 
   return {
-    bmi,
-    bmiAdvice,
+    bmi: bmi.toString(),
+    advice,
   };
 };
