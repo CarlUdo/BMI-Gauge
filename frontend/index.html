@@ -1,48 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMI Gauge</title>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-  >
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Gauge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+  </head>
 
-<body style="padding: 2rem;">
-  <header>
-    <h1 style="padding-bottom: 2rem;">
-      BMI GAUGE
-    </h1>
-  </header>
+  <body style="padding: 2rem">
+    <header>
+      <h1 style="padding-bottom: 2rem">BMI GAUGE</h1>
+    </header>
 
-  <main>
-    <section>
-      <form style="display: flex; align-items:end">
-        <div style=" margin-right: 1.5rem;">
-          <label for="heightField">
-            Height in cm
-          </label>
-          <input style="width: 150px;" id="heightField" type="text" name="text" aria-label="Text">
-        </div>
-        <div style="margin-right: 2rem;">
-          <label for="weightField">
-            Weight in kg
-          </label>
-          <input style="width: 150px;" id="weightField" type="text" name="text" aria-label="Text">
-        </div>
-        <input style="width: 140px;" id="submitButton" type="submit" value="Calculate" disabled>
-      </form>
-    </section>
-    <section>
-      <p id="outputArea"></p>
-    </section>
-  </main>
-  
-  <footer style="font-size: 0.8rem; position: fixed; bottom: 0; right: 0; width: 100%; text-align: right; padding-right: 1rem;">
-     Copyright &#169; 2024 Carl Bieneck. All Rights Reserved
-  </footer>
-  
-<script src="./dist/index.js"></script>
+    <main>
+      <section>
+        <form style="display: flex; align-items: end">
+          <div style="margin-right: 1.5rem">
+            <label for="heightField"> Height in cm </label>
+            <input
+              style="width: 150px"
+              id="heightField"
+              type="text"
+              name="text"
+              aria-label="Text"
+            />
+          </div>
+          <div style="margin-right: 2rem">
+            <label for="weightField"> Weight in kg </label>
+            <input
+              style="width: 150px"
+              id="weightField"
+              type="text"
+              name="text"
+              aria-label="Text"
+            />
+          </div>
+          <input
+            style="width: 140px"
+            id="submitButton"
+            type="submit"
+            value="Calculate"
+            disabled
+          />
+        </form>
+      </section>
+      <section>
+        <p id="outputArea"></p>
+      </section>
+    </main>
+
+    <footer
+      style="
+        font-size: 0.8rem;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        text-align: right;
+        padding-right: 1rem;
+      "
+    >
+      Copyright &#169; 2024 Carl Bieneck. All Rights Reserved
+    </footer>
+
+    <script src="./dist/index.js"></script>
+  </body>
 </html>
