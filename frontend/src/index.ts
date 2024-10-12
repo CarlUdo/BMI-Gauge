@@ -4,23 +4,24 @@
  *  For the convenience of this assignment all functions are collected into one script file.
  */
 
-const submitButton = document.getElementById("submitButton") as HTMLButtonElement;
+const submitButton = document.getElementById(
+  "submitButton",
+) as HTMLButtonElement;
 const heightField = document.getElementById("heightField") as HTMLInputElement;
 const weightField = document.getElementById("weightField") as HTMLInputElement;
 const outputArea = document.getElementById("outputArea") as HTMLInputElement;
-const baseUrl = 'http://localhost:3000';
+const baseUrl = "http://localhost:3000";
 
-/** Types */ 
+/** Types */
 type BmiRequest = {
   height: string;
   weight: string;
 };
 
 type BmiResponse = {
-  height: string;
-  weight: string;
+  bmi: number;
+  advice: string;
 };
-
 
 /** Helper functions */
 const isInteger = (str: string) => {
@@ -36,7 +37,6 @@ const isValidIntegers = (heightInput: string, weightInput: string) => {
   return isValidHeight && isValidWeight;
 };
 
-
 /** Post and render functions */
 const renderData = (bmiResponse: BmiResponse) => {
   outputArea.innerHTML = JSON.stringify(bmiResponse);
@@ -47,18 +47,18 @@ const makePostRequest = async (bmiRequest: BmiRequest) => {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Accept": "application/json"
+      Accept: "application/json",
     },
-    body: JSON.stringify(bmiRequest)
+    body: JSON.stringify(bmiRequest),
   });
 
-  return await response.json() as BmiResponse;
+  return (await response.json()) as BmiResponse;
 };
 
 const postDataToApi = async () => {
   const bmiRequest: BmiRequest = {
     height: heightField.value,
-    weight: weightField.value
+    weight: weightField.value,
   };
 
   const bmiResponse = await makePostRequest(bmiRequest);
@@ -66,35 +66,34 @@ const postDataToApi = async () => {
   renderData(bmiResponse);
 };
 
-
 /** Event listeners */
 const initListeners = () => {
-  submitButton.addEventListener('click', e => {
+  submitButton.addEventListener("click", (e) => {
     e.preventDefault();
-    postDataToApi(); 
-    heightField.value = '';
-    weightField.value = '';
-    outputArea.value = '';
-    submitButton.setAttribute('disabled', 'true');
+    postDataToApi();
+    heightField.value = "";
+    weightField.value = "";
+    outputArea.value = "";
+    submitButton.setAttribute("disabled", "true");
   });
-  
-  heightField.addEventListener('change', () => {
-    submitButton.setAttribute('disabled', 'true');
-  
+
+  heightField.addEventListener("change", () => {
+    submitButton.setAttribute("disabled", "true");
+
     if (isValidIntegers(heightField.value, weightField.value)) {
-      submitButton.removeAttribute('disabled');
+      submitButton.removeAttribute("disabled");
     }
   });
-  
-  weightField.addEventListener('change', () => {  
-    submitButton.setAttribute('disabled', 'true');
-  
+
+  weightField.addEventListener("change", () => {
+    submitButton.setAttribute("disabled", "true");
+
     if (isValidIntegers(heightField.value, weightField.value)) {
-      submitButton.removeAttribute('disabled');
+      submitButton.removeAttribute("disabled");
     }
   });
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   initListeners();
 });
