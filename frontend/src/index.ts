@@ -19,7 +19,7 @@ type BmiRequest = {
 };
 
 type BmiResponse = {
-  bmi: number;
+  bmi: string;
   advice: string;
 };
 
@@ -38,12 +38,18 @@ const isValidIntegers = (heightInput: string, weightInput: string) => {
 };
 
 
-
 /** Post and render functions */
 const renderData = (bmiResponse: BmiResponse) => {
   outputArea.removeAttribute('hidden');
 
-  outputArea.innerHTML = JSON.stringify(bmiResponse);
+  const p1Element = document.createElement('p');
+  p1Element.innerHTML = `<strong>Your BMI is: </strong>${bmiResponse.bmi}`;
+
+  const p2Element = document.createElement('p');
+  p2Element.textContent = bmiResponse.advice;
+
+  outputArea.appendChild(p1Element);
+  outputArea.appendChild(p2Element);
 };
 
 const makePostRequest = async (bmiRequest: BmiRequest) => {
