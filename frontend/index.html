@@ -9,11 +9,12 @@
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
   >
 </head>
+
 <body style="padding: 2rem;">
   <h1 style="padding-bottom: 2rem;">
     BMI GAUGE
   </h1>
-  <div style="display: flex; align-items:end">
+  <form style="display: flex; align-items:end">
     <div style=" margin-right: 1.5rem;">
       <label for="heightField">
         Height in cm
@@ -27,7 +28,7 @@
       <input id="weightField" style="width: 150px;" type="text" name="text" aria-label="Text">
     </div>
     <button id="submitButton" style="width: 140px;" type="submit">Calculate</button> 
-  </div>
+  </form>
 </body>
 <script src="./dist/index.js"></script>
 </html>
