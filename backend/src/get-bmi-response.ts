@@ -20,6 +20,8 @@ export const getBmiResponse = (bmiRequest: BmiRequest) => {
     bmi: bmi.toString(),
     advice,
     range,
-    info
+    info,
+    height,
+    weight
   };
 };
