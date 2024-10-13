@@ -11,8 +11,8 @@ export const getBmiResponse = (bmiRequest: BmiRequest) => {
   const weight = Number(bmiRequest.weight);
 
   const bmi = calculateBmi(height, weight);
-
-  const { advice, range } = getAdvice(bmi);
+ 
+  const { advice, range, emoji } = getAdvice(bmi);
 
   const info = getKgInfoToNextRange(height, weight, bmi);
 
@@ -20,6 +20,7 @@ export const getBmiResponse = (bmiRequest: BmiRequest) => {
     bmi: bmi,
     advice,
     range,
+    emoji,
     info,
     height,
     weight,
