@@ -100,3 +100,16 @@ test("height 190 and weight 90 sould return bmi 24.93", () => {
 
   deepEqual(bmi, '24.93');
 });
+
+test("height 170 and weight 70 should return advice for healthy range", () => {
+  const validRequest = {
+    height: '170',
+    weight: '70'
+  };
+
+  const { advice } = getBmiResponse(validRequest);
+
+  const healthyRange = `You're having a healthy weight. Maintaining a healthy weight is fantastic. Keep focusing on balanced nutrition, regular exercise, and staying mindful of your well-being. You’re doing great!`;
+
+  deepEqual(advice, healthyRange);
+});
