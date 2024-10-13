@@ -19,9 +19,9 @@ const advice: Advice = {
 };
 
 export const getAdvice = (bmi: number) => {
-  if (bmi < 18.5) return advice["underweight"];
-  if (bmi >= 18.5 && bmi < 25) return advice["healthyRange"];
-  if (bmi >= 25 && bmi < 30) return advice["overweight"];
-  if (bmi >= 30 && bmi < 40) return advice["obesity"];
-  return advice["severeObesity"];
+  if (bmi < 18.5) return {advice: advice["underweight"], range: "underweight"};
+  if (bmi >= 18.5 && bmi < 25) return {advice: advice["healthyRange"], range: "healthyRange"}; 
+  if (bmi >= 25 && bmi < 30) return {advice: advice["overweight"], range: "overweight"}; 
+  if (bmi >= 30 && bmi < 40) return {advice: advice["obesity"], range: "obesity"};
+  return {advice: advice["severeObesity"], range: "severeObesity"};
 };
