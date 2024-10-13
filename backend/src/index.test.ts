@@ -113,3 +113,14 @@ test("height 170 and weight 70 should return advice for healthy range", () => {
 
   deepEqual(advice, healthyRange);
 });
+
+test("height 150 and weight 200 should return range severeObesity", () => {
+  const validRequest = {
+    height: '150',
+    weight: '200'
+  };
+
+  const { range } = getBmiResponse(validRequest);
+
+  deepEqual(range, 'severeObesity');
+});
