@@ -90,7 +90,7 @@ test("getBmiResponse throws error for weight < 20", () => {
   }, /Weight must be between 20 and 700 kg./);
 });
 
-test("height 190 and weight 90 sould return bmi 24.93", () => {
+test("height 190 and weight 90 sould return bmi = 24.93", () => {
   const validRequest = {
     height: "190",
     weight: "90",
@@ -98,7 +98,7 @@ test("height 190 and weight 90 sould return bmi 24.93", () => {
 
   const { bmi } = getBmiResponse(validRequest);
 
-  deepEqual(bmi, "24.93");
+  deepEqual(bmi, 24.93);
 });
 
 test("height 170 and weight 70 should return advice for healthy range", () => {
@@ -114,7 +114,7 @@ test("height 170 and weight 70 should return advice for healthy range", () => {
   deepEqual(advice, healthyRange);
 });
 
-test("height 150 and weight 200 should return range Severe obesity", () => {
+test("height 150 and weight 200 should return range 'Severe obesity'", () => {
   const validRequest = {
     height: "150",
     weight: "200",
