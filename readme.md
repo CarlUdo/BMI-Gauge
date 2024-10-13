@@ -52,7 +52,7 @@ type BmiResponse = {
   advice: string;  
 };
 ```
-_height_ and _weight_ are the values entered by the user. _bmi_ is calculated based on these numbers. _range_ is a string representation indicating where you fall on the BMI scale: _Underweight_, _Healthy_, _Overweight_, _Obesity_ and _Severe obesity_. The _emoji_ visually suggests what you should ideally do based on your BMI scale position. For instance, if you're underweight, a random emoji of food or drink will be displayed. If you're overweight, a random emoji representing a sport activity will appear. _info_ provides the number of kilograms needed to reach the next range(s). Finally, _advice_ offers a pat on the back and suggests what to do next.
+_height_ and _weight_ are the values entered by the user. _bmi_ is calculated based on these numbers. _range_ is a string representation indicating where you fall on the BMI scale: _Underweight_, _Healthy_, _Overweight_, _Obesity_ and _Severe obesity_. The _emoji_ visually suggests what you should ideally do based on your BMI scale position. For instance, if you're underweight, a random emoji of food or drink will be displayed. If you're overweight, a random emoji representing a sport activity will appear. _info_ provides the number of kilograms to gain/lose to reach the next range(s). Finally, _advice_ offers a pat on the back and suggests what to do next.
 
 If a user, for example, enters a height of 170 cm and a weight of 90 kg, this is how it will look:
 
