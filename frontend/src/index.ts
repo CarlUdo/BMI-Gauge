@@ -22,6 +22,7 @@ type BmiResponse = {
   bmi: number;
   advice: string;
   range: string;
+  emoji: string;
   info: string;
   height: number;
   weight: number;
@@ -48,10 +49,11 @@ const renderData = (bmiResponse: BmiResponse) => {
   const p1Element = document.createElement("p");
 
   p1Element.innerHTML =
-    `<strong>BMI: </strong>${bmiResponse.bmi}&nbsp;&nbsp;&nbsp;` +
-    `<strong>Range: </strong>${bmiResponse.range}&nbsp;&nbsp;&nbsp;` +
-    `<strong>Height: </strong>${bmiResponse.height} cm&nbsp;&nbsp;&nbsp;` +
-    `<strong>Weight: </strong>${bmiResponse.weight} kg`;
+    `<strong>Height: </strong>${bmiResponse.height} cm&nbsp;&nbsp;&nbsp;&nbsp;` +
+    `<strong>Weight: </strong>${bmiResponse.weight} kg&nbsp;&nbsp;&nbsp;&nbsp;` +
+    `<strong>BMI: </strong>${bmiResponse.bmi}&nbsp;&nbsp;&nbsp;&nbsp;` +
+    `<strong>Range: </strong>${bmiResponse.range}&nbsp;&nbsp;&nbsp;&nbsp;` +    
+    `<strong>Enjoy: </strong>${bmiResponse.emoji}`;
 
   const p2Element = document.createElement("p");
   p2Element.innerHTML = `<em><strong>Note! </strong>${bmiResponse.info}</em> `;
