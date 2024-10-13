@@ -1,3 +1,4 @@
+import { getEmoji } from "./get-emoji";
 import type { Advice } from "./types";
 
 const underweight = `You're struggling with underweight. Gaining weight can be a healthy and gradual process. Seeking guidance from a nutritionist or dietitian can help you develop a balanced plan to reach a healthier weight. Take care of yourself!`;
@@ -20,12 +21,32 @@ const advice: Advice = {
 
 export const getAdvice = (bmi: number) => {
   if (bmi < 18.5)
-    return { advice: advice["underweight"], range: "Underweight" };
+    return { 
+      advice: advice["underweight"], 
+      range: "Underweight",
+      emoji: getEmoji("Underweight")
+    };
   if (bmi >= 18.5 && bmi < 25)
-    return { advice: advice["healthyRange"], range: "Healthy" };
+    return { 
+      advice: advice["healthyRange"], 
+      range: "Healthy", 
+      emoji: getEmoji("Healthy")
+    };
   if (bmi >= 25 && bmi < 30)
-    return { advice: advice["overweight"], range: "Overweight" };
+    return { 
+      advice: advice["overweight"], 
+      range: "Overweight",
+      emoji: getEmoji("Overweight")
+    };
   if (bmi >= 30 && bmi < 40)
-    return { advice: advice["obesity"], range: "Obesity" };
-  return { advice: advice["severeObesity"], range: "Severe obesity" };
+    return { 
+      advice: advice["obesity"], 
+      range: "Obesity",
+      emoji: getEmoji("Obesity")
+    };
+  return { 
+    advice: advice["severeObesity"], 
+    range: "Severe obesity", 
+    emoji: getEmoji("Severe obesity")
+  };
 };
