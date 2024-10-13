@@ -78,3 +78,14 @@ test("getBmiResponse throws error for weight > 700", () => {
     getBmiResponse(invalidRequest);
   }, /Weight must be between 20 and 700 kg./);
 });
+
+test("getBmiResponse throws error for weight < 20", () => {
+  const invalidRequest = {
+    height: '170',
+    weight: '19'
+  };
+
+  assert.throws(() => {
+    getBmiResponse(invalidRequest);
+  }, /Weight must be between 20 and 700 kg./);
+});
