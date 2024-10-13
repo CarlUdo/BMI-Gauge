@@ -4,7 +4,7 @@ Thank you for using BMI Gauge - Your health is your wealth! Maintaining a health
 
 ## Big-picture plan
 
-The background for this assignment was that we had the weekend to build our first basic full-stack application from scratch. The requirement was to use a Node HTTP server for the backend. For the frontend, a single HTML page with a form should be used, allowing the user to input their data and send it to the server. Vanilla JavaScript (TypeScript) should be employed to manipulate the DOM, listen to events, and make network requests using the Fetch API.
+The background for this assignment was that we had the weekend to build our first basic full-stack application from scratch. The requirement was to use a Node HTTP server for the backend. For the frontend, a single HTML page with a form should be used, allowing the user to input their data and send it to the server. Vanilla JavaScript (TypeScript) should be employed to manipulate the DOM, listen to events, and make network requests using the Fetch API. Client runs with the _http-server_.
 
 My big-picture plan was to create a cool and user-friendly full-stack application. Users should be able to enter their height and weight on the page. Upon submission, the data is sent to the server via an HTTP POST request. The server then validates the data and performs various calculations. An HTTP response with the calculated BMI (Body Mass Index) is sent back to the client, where it’s rendered on the page.
 
