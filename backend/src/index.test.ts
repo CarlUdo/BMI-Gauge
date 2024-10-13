@@ -13,7 +13,7 @@ test("getBmiResponse throws error for height = ''", () => {
   }, /Height and weight must be integers./);
 });
 
-test("getBmiResponse throws error for weight = banana", () => {
+test("getBmiResponse throws error for weight = 'banana'", () => {
   const invalidRequest = {
     height: "180",
     weight: "banana",
@@ -24,7 +24,7 @@ test("getBmiResponse throws error for weight = banana", () => {
   }, /Height and weight must be integers./);
 });
 
-test("getBmiResponse throws error for height > 280", () => {
+test("getBmiResponse throws error for height > '280'", () => {
   const invalidRequest = {
     height: "281",
     weight: "90",
@@ -35,7 +35,7 @@ test("getBmiResponse throws error for height > 280", () => {
   }, /Height must be between 80 and 280 cm./);
 });
 
-test("getBmiResponse throws error for height < 80", () => {
+test("getBmiResponse throws error for height < '80'", () => {
   const invalidRequest = {
     height: "79",
     weight: "100",
@@ -57,7 +57,7 @@ test("getBmiResponse throws error for weight = ''", () => {
   }, /Height and weight must be integers./);
 });
 
-test("getBmiResponse throws error for weight = cake", () => {
+test("getBmiResponse throws error for weight = 'cake'", () => {
   const invalidRequest = {
     height: "189",
     weight: "cake",
@@ -68,7 +68,7 @@ test("getBmiResponse throws error for weight = cake", () => {
   }, /Height and weight must be integers./);
 });
 
-test("getBmiResponse throws error for weight > 700", () => {
+test("getBmiResponse throws error for weight > '700'", () => {
   const invalidRequest = {
     height: "189",
     weight: "701",
@@ -79,7 +79,7 @@ test("getBmiResponse throws error for weight > 700", () => {
   }, /Weight must be between 20 and 700 kg./);
 });
 
-test("getBmiResponse throws error for weight < 20", () => {
+test("getBmiResponse throws error for weight < '20'", () => {
   const invalidRequest = {
     height: "170",
     weight: "19",
@@ -90,7 +90,7 @@ test("getBmiResponse throws error for weight < 20", () => {
   }, /Weight must be between 20 and 700 kg./);
 });
 
-test("height 190 and weight 90 sould return bmi = 24.93", () => {
+test("height '190' and weight '90' should return bmi = 24.93", () => {
   const validRequest = {
     height: "190",
     weight: "90",
@@ -101,7 +101,7 @@ test("height 190 and weight 90 sould return bmi = 24.93", () => {
   deepEqual(bmi, 24.93);
 });
 
-test("height 170 and weight 70 should return advice for healthy range", () => {
+test("height '170' and weight '70' should return advice for healthy range", () => {
   const validRequest = {
     height: "170",
     weight: "70",
@@ -114,7 +114,7 @@ test("height 170 and weight 70 should return advice for healthy range", () => {
   deepEqual(advice, healthyRange);
 });
 
-test("height 150 and weight 200 should return range 'Severe obesity'", () => {
+test("height '150' and weight '200' should return range = 'Severe obesity'", () => {
   const validRequest = {
     height: "150",
     weight: "200",
@@ -125,7 +125,7 @@ test("height 150 and weight 200 should return range 'Severe obesity'", () => {
   deepEqual(range, "Severe obesity");
 });
 
-test("height 185 and weight 200 should return correct info string", () => {
+test("height '185' and weight '80' should return correct info string", () => {
   const validRequest = {
     height: "185",
     weight: "80",
@@ -136,7 +136,7 @@ test("height 185 and weight 200 should return correct info string", () => {
   deepEqual(info, "Gain 5.56 kg to get into overweight range. Lose 16.72 kg to get into underweight range.");
 });
 
-test("height 165 and weight 70 should return weight = 70", () => {
+test("height '165' and weight '70' should return weight = 70", () => {
   const validRequest = {
     height: "165",
     weight: "70",
