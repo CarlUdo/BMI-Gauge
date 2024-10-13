@@ -67,3 +67,14 @@ test("getBmiResponse throws error for weight = cake", () => {
     getBmiResponse(invalidRequest);
   }, /Height and weight must be integers./);
 });
+
+test("getBmiResponse throws error for weight > 700", () => {
+  const invalidRequest = {
+    height: '189',
+    weight: '701'
+  };
+
+  assert.throws(() => {
+    getBmiResponse(invalidRequest);
+  }, /Weight must be between 20 and 700 kg./);
+});
