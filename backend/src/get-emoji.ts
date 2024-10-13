@@ -1,5 +1,5 @@
 import * as emoji from "node-emoji";
-import type { RangeType } from "./types";
+import type { Range } from "./types";
 
 const danceEmojiNames = ["dancer", "man_dancing"];
 
@@ -54,12 +54,12 @@ const sportEmojiNames = [
   "trophy",
 ];
 
-export const getEmoji = (rangeType: RangeType) => {
-  if (rangeType === "Underweight")
+export const getEmoji = (range: Range) => {
+  if (range === "Underweight")
     return emoji.get(
       foodEmojiNames[Math.floor(Math.random() * foodEmojiNames.length)],
     ) as string;
-  if (rangeType === "Healthy")
+  if (range === "Healthy")
     return emoji.get(
       danceEmojiNames[Math.floor(Math.random() * danceEmojiNames.length)],
     ) as string;
