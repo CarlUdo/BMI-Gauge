@@ -1,6 +1,6 @@
 import { calculateBmi } from "./calculate-bmi";
 import { getAdvice } from "./get-advice";
-import { getKgInfoToNextRange } from "./get-kg-info-to-next-range";
+import { getInfoForAdjacentRange} from "./get-info-for-adjacent-range";
 import type { BmiRequest } from "./types";
 import { validateBmiRequest } from "./validate-bmi-request";
 
@@ -12,17 +12,17 @@ export const getBmiResponse = (bmiRequest: BmiRequest) => {
 
   const bmi = calculateBmi(height, weight);
 
-  const { advice, range, emoji } = getAdvice(bmi);
+  const { range, emoji, advice } = getAdvice(bmi);
 
-  const info = getKgInfoToNextRange(height, weight, bmi);
+  const info = getInfoForAdjacentRange(height, weight, bmi);
 
-  return {
+  return { 
     height,
     weight,
     bmi,
     range,
+    emoji, 
     info,
-    advice,    
-    emoji,    
+    advice,        
   };
 };
