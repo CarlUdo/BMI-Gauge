@@ -56,3 +56,14 @@ test("getBmiResponse throws error for weight = ''", () => {
     getBmiResponse(invalidRequest);
   }, /Height and weight must be integers./);
 });
+
+test("getBmiResponse throws error for weight = cake", () => {
+  const invalidRequest = {
+    height: '189',
+    weight: 'cake'
+  };
+
+  assert.throws(() => {
+    getBmiResponse(invalidRequest);
+  }, /Height and weight must be integers./);
+});
