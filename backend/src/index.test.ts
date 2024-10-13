@@ -34,3 +34,14 @@ test("getBmiResponse throws error for height > 280", () => {
     getBmiResponse(invalidRequest);
   }, /Height must be between 80 and 280 cm./);
 });
+
+test("getBmiResponse throws error for height < 80", () => {
+  const invalidRequest = {
+    height: '79',
+    weight: '100'
+  };
+
+  assert.throws(() => {
+    getBmiResponse(invalidRequest);
+  }, /Height must be between 80 and 280 cm./);
+});
