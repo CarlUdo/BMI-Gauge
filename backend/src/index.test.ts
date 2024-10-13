@@ -135,3 +135,14 @@ test("height 185 and weight 200 should return correct info string", () => {
 
   deepEqual(info, "Gain 5.56 kg to get into overweight range. Lose 16.72 kg to get into underweight range.");
 });
+
+test("height 165 and weight 70 should return weight = 70", () => {
+  const validRequest = {
+    height: "165",
+    weight: "70",
+  };
+
+  const { weight } = getBmiResponse(validRequest);
+
+  deepEqual(weight, 70);
+});
