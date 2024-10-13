@@ -11,8 +11,12 @@ export default http.createServer((req, res) => {
   });
 
   if (req.method !== "POST") {
-    return res.end(JSON.stringify({ error: `Invalid method: ${req.method}. Only POST requests are allowed within the scope of this assignment.` }));
-  }  
+    return res.end(
+      JSON.stringify({
+        error: `Invalid method: ${req.method}. Only POST requests are allowed within the scope of this assignment.`,
+      }),
+    );
+  }
 
   let body = "";
 
