@@ -88,7 +88,7 @@ const initListeners = () => {
     outputArea.setAttribute("hidden", "true");
   });
 
-  heightField.addEventListener("change", () => {
+  heightField.addEventListener("input", () => {
     submitButton.setAttribute("disabled", "true");
 
     if (isValidIntegers(heightField.value, weightField.value)) {
@@ -96,8 +96,9 @@ const initListeners = () => {
     }
   });
 
-  weightField.addEventListener("change", () => {
+  weightField.addEventListener("input", () => {
     submitButton.setAttribute("disabled", "true");
+
 
     if (isValidIntegers(heightField.value, weightField.value)) {
       submitButton.removeAttribute("disabled");
