@@ -4,8 +4,8 @@ import assert, { deepEqual } from "node:assert/strict";
 
 test("getBmiResponse throws error for height = ''", () => {
   const invalidRequest = {
-    height: '',
-    weight: '90'
+    height: "",
+    weight: "90",
   };
 
   assert.throws(() => {
@@ -15,8 +15,8 @@ test("getBmiResponse throws error for height = ''", () => {
 
 test("getBmiResponse throws error for weight = banana", () => {
   const invalidRequest = {
-    height: '180',
-    weight: 'banana'
+    height: "180",
+    weight: "banana",
   };
 
   assert.throws(() => {
@@ -26,8 +26,8 @@ test("getBmiResponse throws error for weight = banana", () => {
 
 test("getBmiResponse throws error for height > 280", () => {
   const invalidRequest = {
-    height: '281',
-    weight: '90'
+    height: "281",
+    weight: "90",
   };
 
   assert.throws(() => {
@@ -37,8 +37,8 @@ test("getBmiResponse throws error for height > 280", () => {
 
 test("getBmiResponse throws error for height < 80", () => {
   const invalidRequest = {
-    height: '79',
-    weight: '100'
+    height: "79",
+    weight: "100",
   };
 
   assert.throws(() => {
@@ -48,8 +48,8 @@ test("getBmiResponse throws error for height < 80", () => {
 
 test("getBmiResponse throws error for weight = ''", () => {
   const invalidRequest = {
-    height: '189',
-    weight: ''
+    height: "189",
+    weight: "",
   };
 
   assert.throws(() => {
@@ -59,8 +59,8 @@ test("getBmiResponse throws error for weight = ''", () => {
 
 test("getBmiResponse throws error for weight = cake", () => {
   const invalidRequest = {
-    height: '189',
-    weight: 'cake'
+    height: "189",
+    weight: "cake",
   };
 
   assert.throws(() => {
@@ -70,8 +70,8 @@ test("getBmiResponse throws error for weight = cake", () => {
 
 test("getBmiResponse throws error for weight > 700", () => {
   const invalidRequest = {
-    height: '189',
-    weight: '701'
+    height: "189",
+    weight: "701",
   };
 
   assert.throws(() => {
@@ -81,8 +81,8 @@ test("getBmiResponse throws error for weight > 700", () => {
 
 test("getBmiResponse throws error for weight < 20", () => {
   const invalidRequest = {
-    height: '170',
-    weight: '19'
+    height: "170",
+    weight: "19",
   };
 
   assert.throws(() => {
@@ -92,19 +92,19 @@ test("getBmiResponse throws error for weight < 20", () => {
 
 test("height 190 and weight 90 sould return bmi 24.93", () => {
   const validRequest = {
-    height: '190',
-    weight: '90'
+    height: "190",
+    weight: "90",
   };
 
   const { bmi } = getBmiResponse(validRequest);
 
-  deepEqual(bmi, '24.93');
+  deepEqual(bmi, "24.93");
 });
 
 test("height 170 and weight 70 should return advice for healthy range", () => {
   const validRequest = {
-    height: '170',
-    weight: '70'
+    height: "170",
+    weight: "70",
   };
 
   const { advice } = getBmiResponse(validRequest);
@@ -116,11 +116,11 @@ test("height 170 and weight 70 should return advice for healthy range", () => {
 
 test("height 150 and weight 200 should return range severeObesity", () => {
   const validRequest = {
-    height: '150',
-    weight: '200'
+    height: "150",
+    weight: "200",
   };
 
   const { range } = getBmiResponse(validRequest);
 
-  deepEqual(range, 'severeObesity');
+  deepEqual(range, "severeObesity");
 });

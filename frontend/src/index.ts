@@ -46,8 +46,9 @@ const renderData = (bmiResponse: BmiResponse) => {
   outputArea.removeAttribute("hidden");
 
   const p1Element = document.createElement("p");
-  
-  p1Element.innerHTML = `<strong>BMI: </strong>${bmiResponse.bmi}&nbsp;&nbsp;&nbsp;` + 
+
+  p1Element.innerHTML =
+    `<strong>BMI: </strong>${bmiResponse.bmi}&nbsp;&nbsp;&nbsp;` +
     `<strong>Range: </strong>${bmiResponse.range}&nbsp;&nbsp;&nbsp;` +
     `<strong>Height: </strong>${bmiResponse.height} cm&nbsp;&nbsp;&nbsp;` +
     `<strong>Weight: </strong>${bmiResponse.weight} kg`;
@@ -109,7 +110,6 @@ const initListeners = () => {
 
   weightField.addEventListener("input", () => {
     submitButton.setAttribute("disabled", "true");
-
 
     if (isValidIntegers(heightField.value, weightField.value)) {
       submitButton.removeAttribute("disabled");

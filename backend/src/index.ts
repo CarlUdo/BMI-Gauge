@@ -1,4 +1,4 @@
-import server from './api';
+import server from "./api";
 
 (() => {
   const PORT = 3000;
@@ -6,5 +6,5 @@ import server from './api';
 
   server.listen(PORT, HOST, () => {
     console.log(`Server is listening on http://${HOST}:${PORT}`);
-  });    
+  });
 })();

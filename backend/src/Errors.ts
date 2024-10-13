@@ -1,5 +1,5 @@
 export class CustomError extends Error {
-  cause?: Error;  
+  cause?: Error;
 
   constructor(message: string, cause?: Error) {
     super(message);
@@ -11,7 +11,7 @@ export class CustomError extends Error {
   }
 
   get statusCode() {
-    if (this.name === 'BadRequestError') return 400;
+    if (this.name === "BadRequestError") return 400;
     return 500;
   }
 }
@@ -20,4 +20,4 @@ export class BadRequestError extends CustomError {
   constructor(message: string, cause?: Error) {
     super(message, cause);
   }
-};
+}
