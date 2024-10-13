@@ -17,7 +17,7 @@ export const getBmiResponse = (bmiRequest: BmiRequest) => {
   const info = getKgInfoToNextRange(height, weight, bmi);
 
   return {
-    bmi: bmi.toString(),
+    bmi: bmi,
     advice,
     range,
     info,
