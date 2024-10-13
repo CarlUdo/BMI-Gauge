@@ -19,13 +19,13 @@ type BmiRequest = {
 };
 
 type BmiResponse = {
+  height: number;
+  weight: number;
   bmi: number;
-  advice: string;
   range: string;
   emoji: string;
   info: string;
-  height: number;
-  weight: number;
+  advice: string;  
 };
 
 /** Helper functions */
