@@ -1,6 +1,6 @@
 /**
  *  Please note that in a real world project the following functions would be divided
- *  into different files/modules and bundled together at build time.
+ *  into different files/modules and bundled together at build time with Webpack or such.
  *  For the convenience of this assignment all functions are collected into one script file.
  */
 
@@ -97,9 +97,8 @@ const initListeners = () => {
     postDataToApi();
     heightField.value = "";
     weightField.value = "";
-    outputArea.value = "";
-    submitButton.setAttribute("disabled", "true");
     outputArea.innerHTML = "";
+    submitButton.setAttribute("disabled", "true");
     outputArea.setAttribute("hidden", "true");
   });
 
