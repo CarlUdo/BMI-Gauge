@@ -22,6 +22,9 @@ type BmiResponse = {
   bmi: string;
   advice: string;
   range: string;
+  info: string;
+  height: string;
+  weight: string;
 };
 
 /** Helper functions */
@@ -43,13 +46,21 @@ const renderData = (bmiResponse: BmiResponse) => {
   outputArea.removeAttribute("hidden");
 
   const p1Element = document.createElement("p");
-  p1Element.innerHTML = `<strong>Your BMI: </strong>${bmiResponse.bmi}&nbsp;&nbsp;&nbsp;&nbsp;<strong>Your range: </strong>${bmiResponse.range}`;
+  
+  p1Element.innerHTML = `<strong>BMI: </strong>${bmiResponse.bmi}&nbsp;&nbsp;&nbsp;` + 
+    `<strong>Range: </strong>${bmiResponse.range}&nbsp;&nbsp;&nbsp;` +
+    `<strong>Height: </strong>${bmiResponse.height} cm&nbsp;&nbsp;&nbsp;` +
+    `<strong>Weight: </strong>${bmiResponse.weight} kg`;
 
   const p2Element = document.createElement("p");
-  p2Element.textContent = bmiResponse.advice;
+  p2Element.innerHTML = `<em><strong>Note! </strong>${bmiResponse.info}</em> `;
+
+  const p3Element = document.createElement("p");
+  p3Element.textContent = bmiResponse.advice;
 
   outputArea.appendChild(p1Element);
   outputArea.appendChild(p2Element);
+  outputArea.appendChild(p3Element);
 };
 
 const makePostRequest = async (bmiRequest: BmiRequest) => {
