@@ -1,5 +1,3 @@
-import type { BmiRequest } from "./types";
-
-export const calculateBmi = (bmiRequest: BmiRequest) => {
-  return parseFloat((Number(bmiRequest.weight) / Math.pow(Number(bmiRequest.height) / 100, 2)).toFixed(2));
+export const calculateBmi = (height: string, weight: string) => {
+  return parseFloat((Number(weight) / Math.pow(Number(height) / 100, 2)).toFixed(2));
 };
