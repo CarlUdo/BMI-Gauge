@@ -97,6 +97,7 @@ const initListeners = () => {
     weightField.value = "";
     outputArea.value = "";
     submitButton.setAttribute("disabled", "true");
+    outputArea.innerHTML = '';
     outputArea.setAttribute("hidden", "true");
   });
 
