@@ -17,12 +17,12 @@ export const getBmiResponse = (bmiRequest: BmiRequest) => {
   const info = getKgInfoToNextRange(height, weight, bmi);
 
   return {
-    bmi: bmi,
-    advice,
-    range,
-    emoji,
-    info,
     height,
     weight,
+    bmi,
+    range,
+    info,
+    advice,    
+    emoji,    
   };
 };
