@@ -1,3 +1,3 @@
-export const calculateBmi = (height: string, weight: string) => {
-  return parseFloat((Number(weight) / Math.pow(Number(height) / 100, 2)).toFixed(2));
+export const calculateBmi = (height: number, weight: number) => {
+  return parseFloat((weight / Math.pow(height / 100, 2)).toFixed(2));
 };
