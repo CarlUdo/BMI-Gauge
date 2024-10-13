@@ -21,6 +21,7 @@ type BmiRequest = {
 type BmiResponse = {
   bmi: string;
   advice: string;
+  range: string;
 };
 
 /** Helper functions */
@@ -42,7 +43,7 @@ const renderData = (bmiResponse: BmiResponse) => {
   outputArea.removeAttribute("hidden");
 
   const p1Element = document.createElement("p");
-  p1Element.innerHTML = `<strong>Your BMI is: </strong>${bmiResponse.bmi}`;
+  p1Element.innerHTML = `<strong>Your BMI: </strong>${bmiResponse.bmi}&nbsp;&nbsp;&nbsp;&nbsp;<strong>Your range: </strong>${bmiResponse.range}`;
 
   const p2Element = document.createElement("p");
   p2Element.textContent = bmiResponse.advice;
