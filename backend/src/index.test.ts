@@ -114,7 +114,7 @@ test("height 170 and weight 70 should return advice for healthy range", () => {
   deepEqual(advice, healthyRange);
 });
 
-test("height 150 and weight 200 should return range severeObesity", () => {
+test("height 150 and weight 200 should return range Severe obesity", () => {
   const validRequest = {
     height: "150",
     weight: "200",
@@ -122,5 +122,16 @@ test("height 150 and weight 200 should return range severeObesity", () => {
 
   const { range } = getBmiResponse(validRequest);
 
-  deepEqual(range, "severeObesity");
+  deepEqual(range, "Severe obesity");
+});
+
+test("height 185 and weight 200 should return correct info string", () => {
+  const validRequest = {
+    height: "185",
+    weight: "80",
+  };
+
+  const { info } = getBmiResponse(validRequest);
+
+  deepEqual(info, "Gain 5.56 kg to get into overweight range. Lose 16.72 kg to get into underweight range.");
 });
