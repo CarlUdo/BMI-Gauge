@@ -21,32 +21,32 @@ const advice: Advice = {
 
 export const getAdvice = (bmi: number) => {
   if (bmi < 18.5)
-    return { 
-      advice: advice["underweight"], 
+    return {
+      advice: advice["underweight"],
       range: "Underweight",
-      emoji: getEmoji("Underweight")
+      emoji: getEmoji("Underweight"),
     };
   if (bmi >= 18.5 && bmi < 25)
-    return { 
-      advice: advice["healthyRange"], 
-      range: "Healthy", 
-      emoji: getEmoji("Healthy")
+    return {
+      advice: advice["healthyRange"],
+      range: "Healthy",
+      emoji: getEmoji("Healthy"),
     };
   if (bmi >= 25 && bmi < 30)
-    return { 
-      advice: advice["overweight"], 
+    return {
+      advice: advice["overweight"],
       range: "Overweight",
-      emoji: getEmoji("Overweight")
+      emoji: getEmoji("Overweight"),
     };
   if (bmi >= 30 && bmi < 40)
-    return { 
-      advice: advice["obesity"], 
+    return {
+      advice: advice["obesity"],
       range: "Obesity",
-      emoji: getEmoji("Obesity")
+      emoji: getEmoji("Obesity"),
     };
-  return { 
-    advice: advice["severeObesity"], 
-    range: "Severe obesity", 
-    emoji: getEmoji("Severe obesity")
+  return {
+    advice: advice["severeObesity"],
+    range: "Severe obesity",
+    emoji: getEmoji("Severe obesity"),
   };
 };

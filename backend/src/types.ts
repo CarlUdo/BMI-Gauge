@@ -11,4 +11,9 @@ export type Advice = {
   severeObesity: string;
 };
 
-export type RangeType = "Underweight" | "Healthy" | "Overweight" | "Obesity" | "Severe obesity";
+export type RangeType =
+  | "Underweight"
+  | "Healthy"
+  | "Overweight"
+  | "Obesity"
+  | "Severe obesity";

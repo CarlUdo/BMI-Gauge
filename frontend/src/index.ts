@@ -25,7 +25,7 @@ type BmiResponse = {
   range: string;
   emoji: string;
   info: string;
-  advice: string;  
+  advice: string;
 };
 
 /** Helper functions */
@@ -52,7 +52,7 @@ const renderData = (bmiResponse: BmiResponse) => {
     `<strong>Height: </strong>${bmiResponse.height} cm&nbsp;&nbsp;&nbsp;&nbsp;` +
     `<strong>Weight: </strong>${bmiResponse.weight} kg&nbsp;&nbsp;&nbsp;&nbsp;` +
     `<strong>BMI: </strong>${bmiResponse.bmi}&nbsp;&nbsp;&nbsp;&nbsp;` +
-    `<strong>Range: </strong>${bmiResponse.range}&nbsp;&nbsp;&nbsp;&nbsp;` +    
+    `<strong>Range: </strong>${bmiResponse.range}&nbsp;&nbsp;&nbsp;&nbsp;` +
     `<strong>Enjoy: </strong>${bmiResponse.emoji}`;
 
   const p2Element = document.createElement("p");
@@ -99,7 +99,7 @@ const initListeners = () => {
     weightField.value = "";
     outputArea.value = "";
     submitButton.setAttribute("disabled", "true");
-    outputArea.innerHTML = '';
+    outputArea.innerHTML = "";
     outputArea.setAttribute("hidden", "true");
   });
 

@@ -21,7 +21,7 @@ export default http.createServer((req, res) => {
   });
 
   req.on("end", () => {
-    try {      
+    try {
       const bmiRequest = JSON.parse(body) as BmiRequest;
 
       const bmiResponse = getBmiResponse(bmiRequest);
