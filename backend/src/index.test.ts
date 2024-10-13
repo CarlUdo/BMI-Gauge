@@ -1,6 +1,6 @@
 import test from "node:test";
 import { getBmiResponse } from "./get-bmi-response";
-import assert from "node:assert";
+import assert, { deepEqual } from "node:assert/strict";
 
 test("getBmiResponse throws error for height = ''", () => {
   const invalidRequest = {
@@ -88,4 +88,15 @@ test("getBmiResponse throws error for weight < 20", () => {
   assert.throws(() => {
     getBmiResponse(invalidRequest);
   }, /Weight must be between 20 and 700 kg./);
+});
+
+test("height 190 and weight 90 sould return bmi 24.93", () => {
+  const validRequest = {
+    height: '190',
+    weight: '90'
+  };
+
+  const { bmi } = getBmiResponse(validRequest);
+
+  deepEqual(bmi, '24.93');
 });
