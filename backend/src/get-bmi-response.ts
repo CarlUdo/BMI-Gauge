@@ -7,10 +7,11 @@ export const getBmiResponse = (bmiRequest: BmiRequest) => {
   validateBmiRequest(bmiRequest);
   
   const bmi = calculateBmi(bmiRequest);
-  const advice = getAdvice(bmi);
+  const { advice, range } = getAdvice(bmi);
 
   return {
     bmi: bmi.toString(),
     advice,
+    range
   };
 };
